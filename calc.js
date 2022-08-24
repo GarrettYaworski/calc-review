@@ -7,15 +7,29 @@ const reader = readline.createInterface({
 
 
 
-reader.question("What would you like to calculate?", function(input){
+reader.question("What would you like to calculate? ", function(input){
+	console.log(input);
 	const tokens = input.split(' ');
-	
+	console.log(tokens)
 	const mathSymbol = tokens[0];
 	const num1 = Number(tokens[1]);
 	const num2 = Number(tokens[2]);
 
-	//some super awesome JS
-	// This line closes the connection to the command line interface.
+	if(mathSymbol === "+"){
+		console.log(num1 + num2)
+	}
+	else if(mathSymbol === "-"){
+		console.log(num1 - num2)
+	}
+	else if(mathSymbol === "*"){
+		console.log(num1 * num2)
+	}
+	else if(mathSymbol === "/"){
+		console.log(num1 / num2)
+	}
+	else if(mathSymbol === "√"){
+		console.log(Math.sqrt(num1))
+	}
 	reader.close()
 
 });
